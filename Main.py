@@ -18,6 +18,7 @@ pinecone.init(
     api_key=papi,
     environment=penv
 )
+print("Pine init")
 
 inam = "marcusaurelius1"
 
@@ -25,6 +26,7 @@ st.set_page_config(page_title="MarcoGPT - Por El Estoico Rico", page_icon="https
 
 if "load_state" not in st.session_state:
     st.session_state.load_state = False
+print("Loaded State")
 
 def c_b_v():
     l = UnstructuredPDFLoader("/Meditaciones-Marco-Aurelio.pdf")
@@ -50,7 +52,7 @@ if "docsearch" not in st.session_state:
     docsearch = st.session_state.docsearch
 else:
     docsearch = st.session_state.docsearch
-
+print("Done docsearch")
 def cm(history):
     messages = [{"role": "system", "content": system_template}]
     
@@ -101,6 +103,7 @@ if "history" not in st.session_state:
     st.session_state.history = []
 if pwd == shower:
     st.chat_input(placeholder="Ej. Tengo un problema con mi pareja y me siento triste", key="prompt", on_submit=generate_response)
+print("Began UI")
 
 for message in st.session_state.history:
     if message["is_user"]:
