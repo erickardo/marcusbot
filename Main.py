@@ -8,7 +8,6 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 import openai
 import pinecone
 
-load_dotenv()
 shower = st.secrets["SHOWER"]
 openai.api_key = st.secrets["OPENAI_API_KEY"]
 opaik = st.secrets["OPENAI_API_KEY"]
