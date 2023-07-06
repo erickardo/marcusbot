@@ -29,7 +29,7 @@ if "load_state" not in st.session_state:
 print("Loaded State")
 
 def c_b_v():
-    l = UnstructuredPDFLoader("/Meditaciones-Marco-Aurelio.pdf")
+    l = UnstructuredPDFLoader("Meditaciones-Marco-Aurelio.pdf")
     data = l.load()
     text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=0)
     texts = text_splitter.split_documents(data)
